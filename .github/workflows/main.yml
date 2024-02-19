@@ -11,12 +11,11 @@ jobs:
 
     steps:
     - name: get code from github
-      uses: appleboy/ssh-action@v0.1.9
+      uses: appleboy/ssh-action@v1.0.3
       with:
-        host: 54.180.98.36
-        username: ubuntu
-        key: ${{ secrets.KEY }}
-        port: 22
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.REMOTE_PORT }}
         script: |
           echo test > /tmp/abcd
-    
