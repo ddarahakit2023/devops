@@ -1,4 +1,4 @@
-- hosts: ["54.180.98.36"]
+- hosts: ["3.34.46.247"]
   tasks:
   - name: Update APT package cache
     apt:
@@ -9,3 +9,8 @@
       name: nginx
       state: present
     become: yes
+  - name: Start Nginx service
+    systemd:
+      name: nginx
+      state: started
+      enabled: yes
