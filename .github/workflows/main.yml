@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: get code from github
-      uses: appleboy/ssh-action@v1.0.3
+      uses: appleboy/ssh-action@v0.1.9
       with:
         host: 54.180.98.36
         username: ubuntu
