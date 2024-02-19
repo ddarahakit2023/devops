@@ -18,4 +18,5 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.REMOTE_PORT }}
         script: |
-          echo test > /tmp/abcd
+          sudo git clone https://github.com/ddarahakit2023/devops
+          sudo mv -f ./devops/*.html /var/www/html
