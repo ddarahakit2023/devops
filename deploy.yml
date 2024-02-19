@@ -1,4 +1,4 @@
-- hosts: ["3.34.46.247"]
+- hosts: ["13.125.248.145"]
   tasks:
   - name: Update APT package cache
     apt:
