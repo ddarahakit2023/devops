@@ -23,7 +23,7 @@ jobs:
         key: ${{secrets.SSH_KEY}}
         inventory: |
           [all]
-          3.34.46.247 ansible_ssh_user=ubuntu
+          13.125.248.145 ansible_ssh_user=ubuntu
 
     - name: get code from github
       uses: appleboy/ssh-action@v1.0.3
