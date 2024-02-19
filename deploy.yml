@@ -14,11 +14,4 @@
       name: nginx
       state: started
       enabled: yes
-  - name: Clone Git repository
-    git:
-      repo: https://github.com/ddarahakit2023/devops
-      dest: /tmp/devops 
-    become: yes 
-  - name: Move HTML files to /var/www/html
-    shell: mv -f /tmp/devops/*.html /var/www/html
-    become: yes  
+  
