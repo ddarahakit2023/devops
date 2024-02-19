@@ -1,0 +1,10 @@
+- hosts: ["54.180.98.36"]
+  tasks:
+  - name: Update APT package cache
+    apt:
+      update_cache: yes
+
+  - name: Install Nginx
+    apt:
+      name: nginx
+      state: present
