@@ -1,14 +1,26 @@
-- name: Run playbook
-  uses: dawidd6/action-ansible-playbook@v2
-  with:
-    # Required, playbook filepath
-    playbook: deploy.yml
-    # Optional, directory where playbooks live
-    directory: ./
-    key: ${{secrets.SSH_KEY}}
-    inventory: |
-      [all]
-      54.180.98.36
+name: devops test
 
-      [group1]
-      54.180.98.36
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  deploy:
+    name: ansible test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Ansible playbook
+      uses: dawidd6/action-ansible-playbook@v2.8.0
+      with:
+        # Required, playbook filepath
+        playbook: deploy.yml
+        # Optional, directory where playbooks live
+        directory: ./
+        key: ${{secrets.SSH_KEY}}
+        inventory: |
+          [all]
+          54.180.98.36
+    
+          [group1]
+          54.180.98.36
