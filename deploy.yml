@@ -3,8 +3,9 @@
   - name: Update APT package cache
     apt:
       update_cache: yes
-
+    become: yes
   - name: Install Nginx
     apt:
       name: nginx
       state: present
+    become: yes
