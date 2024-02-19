@@ -24,15 +24,3 @@ jobs:
         inventory: |
           [all]
           3.34.46.247 ansible_ssh_user=ubuntu
-
-    - name: get code from github
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.REMOTE_PORT }}
-        script: |
-          sudo rm -rf ./devops
-          sudo git clone https://github.com/ddarahakit2023/devops
-          sudo mv -f ./devops/*.html /var/www/html
