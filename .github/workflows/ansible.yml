@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Checkout 
       uses: actions/checkout@v3
-      
+
     - name: Run Ansible playbook
       uses: dawidd6/action-ansible-playbook@v2.8.0
       with:
@@ -23,7 +23,4 @@ jobs:
         key: ${{secrets.SSH_KEY}}
         inventory: |
           [all]
-          54.180.98.36
-    
-          [group1]
-          54.180.98.36
+          54.180.98.36 ansible_ssh_user=ubuntu
